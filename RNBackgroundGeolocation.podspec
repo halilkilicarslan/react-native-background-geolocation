@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
   s.platform            = :ios, '9.0'
 
   s.dependency 'React-Core'
+  s.dependency 'MQTTClient'
   s.static_framework = true
   s.preserve_paths      = 'docs', 'CHANGELOG.md', 'LICENSE', 'package.json', 'RNBackgroundGeolocation.ios.js'
   s.source_files        = 'ios/RNBackgroundGeolocation/*.{h,m}'
-  s.dependency = 'MQTTClient'
   s.libraries           = 'sqlite3', 'z', 'stdc++'
   s.vendored_frameworks = 'ios/RNBackgroundGeolocation/TSLocationManager.xcframework'
 end

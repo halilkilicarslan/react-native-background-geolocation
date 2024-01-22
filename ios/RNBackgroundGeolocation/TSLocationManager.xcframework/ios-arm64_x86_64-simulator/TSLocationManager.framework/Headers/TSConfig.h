@@ -30,15 +30,6 @@ typedef enum TSTrackingMode : NSInteger {
     tsTrackingModeLocation
 } TSTrackingMode;
 
-typedef enum TSLogLevel : NSInteger {
-    tsLogLevelOff = 0,
-    tsLogLevelError,
-    tsLogLevelWarning,
-    tsLogLevelInfo,
-    tsLogLevelDebug,
-    tsLogLevelVerbose
-} TSLogLevel;
-
 typedef enum TSPersistMode : NSInteger {
     tsPersistModeNone = 0,
     tsPersistModeAll = 2,
@@ -118,7 +109,6 @@ typedef enum TSPersistMode : NSInteger {
 @property (nonatomic) NSArray *schedule;
 /// Logging & Debug
 @property (nonatomic) BOOL debug;
-@property (nonatomic) TSLogLevel logLevel;
 @property (nonatomic) NSInteger logMaxDays;
 
 /// :nodoc:
@@ -199,7 +189,7 @@ The SDK's Configuration API.
 -(NSDictionary*)getLocationAuthorizationAlertStrings;
 
 - (BOOL)didDeviceReboot;
-    
+
 # pragma mark Utility methods
 /**
  Returns an `NSDictionary` representation of the configuration options.
@@ -215,7 +205,7 @@ The SDK's Configuration API.
 - (BOOL) hasPluginForEvent:(NSString*)eventName;
 
 /// @name State Properties
- 
+
 /**
  enabled is tracking enabled?
  */
@@ -300,7 +290,6 @@ The SDK's Configuration API.
 @property (nonatomic, readonly) NSArray *schedule;
 /// @name Logging & Debug Properties
 @property (nonatomic, readonly) BOOL debug;
-@property (nonatomic, readonly) TSLogLevel logLevel;
 @property (nonatomic, readonly) NSInteger logMaxDays;
 
 @end

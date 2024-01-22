@@ -278,7 +278,6 @@ FOUNDATION_EXPORT NSString* TSLocationManagerVersion;
 - (void) uploadLog:(NSString*)url query:(LogQuery*)query success:(void(^)(void))success failure:(void(^)(NSString* error))failure;
 
 - (BOOL) destroyLog;
-- (void) setLogLevel:(TSLogLevel)level;
 - (void) playSound:(SystemSoundID)soundId;
 - (void) error:(UIBackgroundTaskIdentifier)taskId message:(NSString*)message;
 - (void) log:(NSString*)level message:(NSString*)message;

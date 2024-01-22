@@ -158,12 +158,12 @@ RCT_EXPORT_METHOD(ready:(NSDictionary*)params success:(RCTResponseSenderBlock)su
     BOOL reset = (params[@"reset"]) ? [params[@"reset"] boolValue] : YES;
     if (ready) {
         TSConfig *config = [TSConfig sharedInstance];
-        if (reset) {
+        /*if (reset) {
             [locationManager log:@"warn" message:@"#ready already called.  Redirecting to #setConfig"];
             [config updateWithDictionary:params];
         } else {
             [locationManager log:@"warn" message:@"#ready already called.  Ignored Config since reset: false"];
-        }
+        }*/
         success(@[[config toDictionary]]);
         return;
     }
@@ -528,7 +528,7 @@ RCT_EXPORT_METHOD(insertLocation:(NSDictionary*)params success:(RCTResponseSende
         failureCallback(@[error]);
     }];
 }
-
+/*
 RCT_EXPORT_METHOD(getLog:(NSDictionary*)params success:(RCTResponseSenderBlock)success failure:(RCTResponseSenderBlock)failure)
 {
     LogQuery *query = [[LogQuery alloc] initWithDictionary:params];
@@ -574,6 +574,7 @@ RCT_EXPORT_METHOD(log:(NSString*)level message:(NSString*)message)
 {
     [locationManager log:level message:message];
 }
+ */
 
 RCT_EXPORT_METHOD(getSensors:(RCTResponseSenderBlock)successCallback failure:(RCTResponseSenderBlock)failureCallback)
 {
@@ -664,11 +665,11 @@ RCT_EXPORT_METHOD(playSound:(int)soundId)
 
 - (void) startObserving {
     // TODO Could possibly execute [self registerEventListeners] here.
-    [locationManager log:@"info" message:@"[RNBackgroundGeolocation startObserving]"];
+    //[locationManager log:@"info" message:@"[RNBackgroundGeolocation startObserving]"];
 }
 - (void) stopObserving {
     // TODO Could possibly execute [locationManager removeListeners] here.
-    [locationManager log:@"info" message:@"[RNBackgroundGeolocation stopObserving]"];
+    //[locationManager log:@"info" message:@"[RNBackgroundGeolocation stopObserving]"];
 }
 
 - (void)dealloc

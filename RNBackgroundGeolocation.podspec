@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'React-Core'
   s.dependency 'MQTTClient'
-  s.dependency 'CocoaLumberjack', '~> 3.7.4'
   s.static_framework = true
   s.preserve_paths      = 'docs', 'CHANGELOG.md', 'LICENSE', 'package.json', 'RNBackgroundGeolocation.ios.js'
   s.source_files        = 'ios/RNBackgroundGeolocation/*.{h,m}'

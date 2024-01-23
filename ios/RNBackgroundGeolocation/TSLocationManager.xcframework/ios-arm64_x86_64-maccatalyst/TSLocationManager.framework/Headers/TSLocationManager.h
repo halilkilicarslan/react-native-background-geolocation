@@ -22,7 +22,6 @@
 #import "TSConfig.h"
 #import "TSCurrentPositionRequest.h"
 #import "TSWatchPositionRequest.h"
-#import "LogQuery.h"
 #import "TSDeviceInfo.h"
 #import "TSAuthorization.h"
 #import "TSHttpService.h"

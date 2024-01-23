@@ -185,12 +185,12 @@ declare module "react-native-background-geolocation" {
     static EVENT_NOTIFICATIONACTION: Event;
     static EVENT_AUTHORIZATION: Event;
 
-    static LOG_LEVEL_OFF: LogLevel;
+   /* static LOG_LEVEL_OFF: LogLevel;
     static LOG_LEVEL_ERROR: LogLevel;
     static LOG_LEVEL_WARNING: LogLevel;
     static LOG_LEVEL_INFO: LogLevel;
     static LOG_LEVEL_DEBUG: LogLevel;
-    static LOG_LEVEL_VERBOSE: LogLevel;
+    static LOG_LEVEL_VERBOSE: LogLevel;*/
 
     static DESIRED_ACCURACY_NAVIGATION:LocationAccuracy;
     static DESIRED_ACCURACY_HIGH:LocationAccuracy;
@@ -242,7 +242,7 @@ declare module "react-native-background-geolocation" {
     /**
     * [[Logger]] API
     */
-    static logger: Logger;
+    //static logger: Logger;
 
     /**
     * @hidden
@@ -669,7 +669,7 @@ declare module "react-native-background-geolocation" {
     * [[stopOnTerminate]]`:false`.  * The received `event` object contains a `name` (the event name) and `params` (the event data-object).
     *
     * ### ⚠️ Note Cordova &amp; Capacitor
-    * - Javascript headless callbacks are not supported by Cordova or Capacitor.  See [Android Headless Mode](github:wiki/Android-Headless-Mode) 
+    * - Javascript headless callbacks are not supported by Cordova or Capacitor.  See [Android Headless Mode](github:wiki/Android-Headless-Mode)
     *
     * ### ⚠️ Warning:
     * - You __must__ `registerHeadlessTask` in your application root file (eg: `index.js`).
@@ -1368,22 +1368,22 @@ declare module "react-native-background-geolocation" {
     /**
     * Sets the [[logLevel]].
     */
-    static setLogLevel(value: LogLevel, success?:(state:State) => void, failure?:Function): Promise<State>;
+    //static setLogLevel(value: LogLevel, success?:(state:State) => void, failure?:Function): Promise<State>;
 
     /**
     * @deprecated Use [[Logger.getLog]].
     */
-    static getLog(success?:(log:string) => void, failure?:(error:string) => void): Promise<string>;
+    //static getLog(success?:(log:string) => void, failure?:(error:string) => void): Promise<string>;
 
     /**
     * @deprecated Use [[Logger.emailLog]].
     */
-    static emailLog(email:string, success?:Function, failure?:(error:string) => void): Promise<void>;
+    //static emailLog(email:string, success?:Function, failure?:(error:string) => void): Promise<void>;
 
     /**
     * @deprecated Use [[Logger.destroyLog]].
     */
-    static destroyLog(success?:Function, failure?:Function): Promise<void>;
+    //static destroyLog(success?:Function, failure?:Function): Promise<void>;
 
     /**
     * Fetches the state of the operating-system's "Power Saving" mode.

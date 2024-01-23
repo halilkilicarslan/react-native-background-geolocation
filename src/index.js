@@ -8,19 +8,18 @@ import {
 import * as Events from './Events';
 import NativeModule from './NativeModule';
 import DeviceSettings from './DeviceSettings';
-import Logger from './Logger';
 import TransistorAuthorizationToken from './TransistorAuthorizationToken';
 
 let _deviceSettingsInstance = null;
 
 const TAG = "BackgroundGeolocation";
-
+/*
 const LOG_LEVEL_OFF     =  0;
 const LOG_LEVEL_ERROR   =  1;
 const LOG_LEVEL_WARNING =  2;
 const LOG_LEVEL_INFO    =  3;
 const LOG_LEVEL_DEBUG   =  4;
-const LOG_LEVEL_VERBOSE =  5;
+const LOG_LEVEL_VERBOSE =  5;*/
 
 // This is a test.
 const DESIRED_ACCURACY_NAVIGATION = -2;
@@ -79,12 +78,12 @@ export default class BackgroundGeolocation {
   static get EVENT_NOTIFICATIONACTION()    { return Events.NOTIFICATIONACTION; }
   static get EVENT_AUTHORIZATION()         { return Events.AUTHORIZATION; }
 
-  static get LOG_LEVEL_OFF()                { return LOG_LEVEL_OFF; }
+  /*static get LOG_LEVEL_OFF()                { return LOG_LEVEL_OFF; }
   static get LOG_LEVEL_ERROR()              { return LOG_LEVEL_ERROR; }
   static get LOG_LEVEL_WARNING()            { return LOG_LEVEL_WARNING; }
   static get LOG_LEVEL_INFO()               { return LOG_LEVEL_INFO; }
   static get LOG_LEVEL_DEBUG()              { return LOG_LEVEL_DEBUG; }
-  static get LOG_LEVEL_VERBOSE()            { return LOG_LEVEL_VERBOSE; }
+  static get LOG_LEVEL_VERBOSE()            { return LOG_LEVEL_VERBOSE; }*/
 
   static get ACTIVITY_TYPE_OTHER()                  { return ACTIVITY_TYPE_OTHER;}
   static get ACTIVITY_TYPE_AUTOMOTIVE_NAVIGATION()  { return ACTIVITY_TYPE_AUTOMOTIVE_NAVIGATION;}
@@ -610,17 +609,17 @@ export default class BackgroundGeolocation {
   /**
   * Set the logLevel.  This is just a helper method for setConfig({logLevel: level})
   */
-  static setLogLevel(value, success, failure) {
+ /* static setLogLevel(value, success, failure) {
     if (arguments.length == 1) {
       return NativeModule.setLogLevel(value);
     } else {
       NativeModule.setLogLevel(value).then(success).catch(failure);
     }
-  }
+  }*/
   /**
   * Fetch the entire contents of log database returned as a String
   */
-  static getLog(success, failure) {
+ /* static getLog(success, failure) {
     console.warn('[' + TAG + ' getLog] Deprecated.  Use BackgroundGeolocation.logger.getLog');
     if (!arguments.length) {
       return Logger.getLog();
@@ -628,9 +627,9 @@ export default class BackgroundGeolocation {
       Logger.getLog().then(success).catch(failure);
     }
   }
-  /**
+  /!**
   * Destroy all contents of log database
-  */
+  *!/
   static destroyLog(success, failure) {
     console.warn('[' + TAG + ' destroyLog] Deprecated.  Use BackgroundGeolocation.logger.destroyLog');
     if (!arguments.length) {
@@ -639,9 +638,9 @@ export default class BackgroundGeolocation {
       Logger.destroyLog().then(success).catch(failure);
     }
   }
-  /**
+  /!**
   * Open deafult email client on device to email the contents of log database attached as a compressed file attachement
-  */
+  *!/
   static emailLog(email, success, failure) {
     console.warn('[' + TAG + ' emailLog] Deprecated.  Use BackgroundGeolocation.logger.emailLog');
     if (typeof(email) != 'string') { throw TAG + "#emailLog requires an email address as 1st argument"}
@@ -650,7 +649,7 @@ export default class BackgroundGeolocation {
     } else {
       Logger.emailLog(email).then(success).catch(failure);
     }
-  }
+  }*/
   /**
   * Has device OS initiated power-saving mode?
   */
@@ -693,7 +692,7 @@ export default class BackgroundGeolocation {
   /**
   * Insert a log message into the plugin's log database
   */
-  static get logger() { return Logger; }
+  /*static get logger() { return Logger; }*/
 
   static getDeviceInfo() {
     return NativeModule.getDeviceInfo();

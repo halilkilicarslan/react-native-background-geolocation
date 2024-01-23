@@ -21,7 +21,7 @@ const PLATFORM_IOS      = "ios";
 /**
 * Logging API
 */
-const LOGGER = {
+/*const LOGGER = {
   error: function(msg) {
     RNBackgroundGeolocation.log('error', msg);
   },
@@ -49,7 +49,7 @@ const LOGGER = {
   ok: function(msg) {
     RNBackgroundGeolocation.log('ok', msg);
   }
-}
+}*/
 
 /// Internal Subscription instance
 /// @deprecated.
@@ -497,7 +497,7 @@ export default class NativeModule {
   * Logging & Debug Methods
   */
 
-  static setLogLevel(value) {
+  /*static setLogLevel(value) {
     return new Promise((resolve, reject) => {
       let success = (state)      => { resolve(state) }
       let failure = (error) => { reject(error) }
@@ -529,7 +529,7 @@ export default class NativeModule {
       RNBackgroundGeolocation.emailLog(email, success, failure);
     });
   }
-
+*/
   static isPowerSaveMode() {
     return new Promise((resolve, reject) => {
       let success = (isPowerSaveMode)   => { resolve(isPowerSaveMode) }
@@ -570,5 +570,5 @@ export default class NativeModule {
     });
   }
 
-  static get logger() { return LOGGER; }
+  //static get logger() { return LOGGER; }
 }

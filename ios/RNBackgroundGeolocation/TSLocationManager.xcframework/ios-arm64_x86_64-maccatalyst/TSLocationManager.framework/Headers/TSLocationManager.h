@@ -269,18 +269,9 @@ FOUNDATION_EXPORT NSString* TSLocationManagerVersion;
 - (void) stopBackgroundTask:(UIBackgroundTaskIdentifier)taskId;
 - (BOOL) isPowerSaveMode;
 
-#pragma mark - Logging & Debug Methods
-
-- (void) getLog:(void(^)(NSString* log))success failure:(void(^)(NSString* error))failure;
-- (void) getLog:(LogQuery*)query success:(void(^)(NSString* log))success failure:(void(^)(NSString* error))failure;
-- (void) emailLog:(NSString*)email success:(void(^)(void))success failure:(void(^)(NSString* error))failure;
-- (void) emailLog:(NSString*)email query:(LogQuery*)query success:(void(^)(void))success failure:(void(^)(NSString* error))failure;
-- (void) uploadLog:(NSString*)url query:(LogQuery*)query success:(void(^)(void))success failure:(void(^)(NSString* error))failure;
-
 - (BOOL) destroyLog;
 - (void) playSound:(SystemSoundID)soundId;
 - (void) error:(UIBackgroundTaskIdentifier)taskId message:(NSString*)message;
-- (void) log:(NSString*)level message:(NSString*)message;
 #pragma mark - Geofencing Methods
 
 - (void) addGeofence:(TSGeofence*)geofence success:(void (^)(void))success failure:(void (^)(NSString* error))failure;
